@@ -1046,40 +1046,6 @@ main {
   #BLOG
 \*-----------------------------------*/
 
-.educontainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.card {
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.card img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
-.card h4 {
-  font-size: var(--fs-3);
-}
-
-.card h5 {
-  font-size: var(--fs-5);
-}
-
-.card p {
-  margin-bottom: 20px;
-}
 
 .blog-posts { margin-bottom: 10px; }
 
