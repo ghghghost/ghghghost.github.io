@@ -768,15 +768,7 @@ main {
 .article-title { margin-bottom: 30px; }
 
 
-.newcontainer {
-  display: flex;
-  flex-direction: row;
-}
 
-.newcontainer img {
-  width: 20%;
-  height: auto;
-}
 
 /**
  * education and experience 
@@ -878,6 +870,15 @@ main {
   border-radius: inherit;
 }
 
+.newcontainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.newcontainer img {
+  width: 20%;
+  height: auto;
+}
 
 
 
