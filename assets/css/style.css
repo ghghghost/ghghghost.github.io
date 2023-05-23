@@ -1883,6 +1883,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .newcontainer img {
-  width: 100%;
+  width: 20%;
   height: auto;
 }
