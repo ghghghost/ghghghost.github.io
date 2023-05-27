@@ -25,17 +25,17 @@ jobs:
     #Added environment section to define the environment for the deployment.
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }} #in step, use the deploy-pages in basic git.
     runs-on: ubuntu-latest
     steps:
-      #Removed the redundant actions/checkout@v3 step as it was already included with actions/checkout@v2.
       - name: Check the repository
         uses: actions/checkout@v2
       - name: Checkout
         uses: actions/checkout@v3
-        #Updated the actions/upload-pages-artifact@v1 to actions/upload-artifact@v2 as it provides the functionality to upload artifacts.
+        #Removed the redundant actions/checkout@v3 step as it was already included with actions/checkout@v2.
       - name: Setup Pages
         uses: actions/configure-pages@v2
+        #Updated the actions/upload-pages-artifact@v1 to actions/upload-artifact@v2 as it provides the functionality to upload artifacts.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
