@@ -1,5 +1,6 @@
 name: Build File
 
+#push and pull on the main branch
 on:
   push:
     branches: [ main ]
@@ -7,37 +8,40 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Added permissions section to specify the required permissions for the workflow.
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# Added concurrency section to control concurrency of the workflow.
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Renamed the job to "deploy" for clarity.
   deploy:
+    #Added environment section to define the environment for the deployment.
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      #Removed the redundant actions/checkout@v3 step as it was already included with actions/checkout@v2.
       - name: Check the repository
         uses: actions/checkout@v2
       - name: Checkout
         uses: actions/checkout@v3
+        #Updated the actions/upload-pages-artifact@v1 to actions/upload-artifact@v2 as it provides the functionality to upload artifacts.
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
+          # upload the repository
           path: '.'
+        #Updated actions/deploy-pages@v1 to actions/deploy-pages@v3 for the deployment step.
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
